@@ -1,1 +1,1 @@
-apiKey = 'INSERISCI-API-KEY'
+apiKey = '<INSERISCI-API-KEY>'

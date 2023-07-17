@@ -1,14 +1,10 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-# from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-# import SocketServer
-# import time
-# import json
 from gpt import speechToText
 from reduce_noise import reduceNoise
 from base64 import b64decode
 import unicodedata
 
-hostName = '192.168.134.53'
+hostName = '<inserire-indirizzo-ip>'
 # hostName = 'localhost'
 serverPort = 12346
 
@@ -35,12 +31,12 @@ class MyServer(BaseHTTPRequestHandler):
         wav_file.close()
 
         wav_file_red = reduceNoise('temp.m4a')
-        print(wav_file_red)
+        
         wav_file = open(wav_file_red, "rb")
 
         text = speechToText(wav_file)
-        # text = text.decode('utf-8')
-        print(text)
+        
+        # print(text)
         self.wfile.write(text.encode())
         
         

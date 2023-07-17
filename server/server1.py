@@ -1,12 +1,9 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-# from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-# import SocketServer
-# import time
 import json
 from gpt import apiCall
 
-# hostName = '192.168.134.53'
-hostName = 'localhost'
+hostName = '<inserire-indirizzo-ip>'
+# hostName = 'localhost'
 serverPort = 12345
 
 class MyServer(BaseHTTPRequestHandler):
